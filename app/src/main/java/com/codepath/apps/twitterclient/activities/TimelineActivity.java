@@ -5,24 +5,38 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
 import com.codepath.apps.twitterclient.TwitterClient;
+import com.codepath.apps.twitterclient.adapters.TweetsArrayAdapter;
+import com.codepath.apps.twitterclient.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class TimelineActivity extends ActionBarActivity {
 
     private TwitterClient client;
+    private ArrayList<Tweet> tweets;
+    private TweetsArrayAdapter aTweets;
+    private ListView lvTweets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+        lvTweets = (ListView) findViewById(R.id.lvTweets); // Find the listview
+        tweets = new ArrayList<>();  // Create the arraylist (data source)
+        aTweets = new TweetsArrayAdapter(this, tweets); // Construct adapter from data source
+        lvTweets.setAdapter(aTweets); // Connect adapter to listview
+
         client = TwitterApplication.getRestClient(); // singleton class; using same client across all activities
         populateTimeline();
     }
@@ -35,8 +49,11 @@ public class TimelineActivity extends ActionBarActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 Log.d("DEBUG", response.toString());
                 // DESERIALIZE JSON
-                // CREATE MODELS
+                // CREATE MODELS AN ADD THEM TO THE ADAPTER
                 // LOAD MODEL DATA INTO LISTVIEW
+                ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
+                aTweets.addAll(tweets);
+
             }
 
             @Override
