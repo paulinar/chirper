@@ -11,6 +11,7 @@ import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
 import com.codepath.apps.twitterclient.TwitterClient;
 import com.codepath.apps.twitterclient.adapters.TweetsArrayAdapter;
+import com.codepath.apps.twitterclient.helpers.EndlessScrollListener;
 import com.codepath.apps.twitterclient.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -39,6 +40,16 @@ public class TimelineActivity extends ActionBarActivity {
 
         client = TwitterApplication.getRestClient(); // singleton class; using same client across all activities
         populateTimeline();
+
+//        // AEndless scroll: attach the listener to the AdapterView onCreate
+//        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+//            @Override
+//            public void onLoadMore(int page, int totalItemsCount) {
+//                // Triggered only when new data needs to be appended to the list
+//                populateTimeline(page);
+//                // or customLoadMoreDataFromApi(totalItemsCount);
+//            }
+//        });
     }
 
     // Send API request to get timeline json and fill listview by creating tweet objects from json

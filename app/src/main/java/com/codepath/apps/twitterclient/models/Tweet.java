@@ -1,10 +1,15 @@
 package com.codepath.apps.twitterclient.models;
 
+import android.text.format.DateUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by paulina on 2/21/15.
@@ -70,6 +75,30 @@ public class Tweet {
         }
 
         return tweets;
+    }
+
+    // getRelativeTimeAgo("Mon Apr 01 21:16:23 +0000 2014");
+    //  "created_at": "Wed Mar 07 22:23:19 +0000 2007"
+    public static String getRelativeTimeAgo(String rawJsonDate) {
+        String twitterFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy";
+        SimpleDateFormat sf = new SimpleDateFormat(twitterFormat, Locale.ENGLISH);
+        sf.setLenient(true);
+
+        String relativeDate = "";
+        String relativeTime = "";
+        try {
+            long dateMillis = sf.parse(rawJsonDate).getTime();
+            relativeDate = DateUtils.getRelativeTimeSpanString(dateMillis,
+                    System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
+            String[] pieces = relativeDate.split(" ");
+            String number = pieces[0];
+            char letter = pieces[1].charAt(0);
+            relativeTime = number + Character.toString(letter);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return relativeTime;
     }
 
 }

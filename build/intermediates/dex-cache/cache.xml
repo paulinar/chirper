@@ -2,39 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-4cf3dc82b98469dc7d6e08df4c72eaf96371d097.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/libs/codepath-utils.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-utils-7db31695a581c3293818caa8236c8a0ec976ec61.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-1c1accd9d11ca5c6ed3a930994f13902ea16caf3.jar" />
-    </item>
-    <item
         jar="/Users/paulina/Desktop/twitter-client/app/libs/codepath-oauth-0.4.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e2bf2d92cfe90d44287c510d955d0c979631e99e">
         <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-oauth-0.4.1-620557d805dba8d1b30d09e63514122335355461.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/libs/ActiveAndroid-3.1-08c6335cd.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="955936734b2b876772fdaf23d1bec3820fb0d1d5">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/ActiveAndroid-3.1-08c6335cd-4c3f6c04ce37eab4dabd2512c0257ee305871a2b.jar" />
     </item>
     <item
         jar="/Users/paulina/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.6/a845a88238be0b5be9d238652c1bc0605ef91f52/android-async-http-1.4.6.jar"
@@ -70,6 +42,34 @@
         revision="21.1.2"
         sha1="a580d06de954001f787e8d024bfcf931fe30bdda">
         <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/scribe-codepath-0.0.3-757e0389276a340fdc96889f862e99294efa7716.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/twitter-client/app/libs/codepath-utils.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4">
+        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-utils-7db31695a581c3293818caa8236c8a0ec976ec61.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
+        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-4cf3dc82b98469dc7d6e08df4c72eaf96371d097.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-1c1accd9d11ca5c6ed3a930994f13902ea16caf3.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/.gradle/caches/modules-2/files-2.1/com.michaelpardo/activeandroid/3.1.0-SNAPSHOT/4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08/activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/activeandroid-3.1.0-SNAPSHOT-c61526256aa5aa2e73bca6e9a5bb81f62405b68f.jar" />
     </item>
 
 </items>

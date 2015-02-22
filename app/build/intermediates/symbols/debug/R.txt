@@ -347,7 +347,7 @@ int id action_menu_presenter 0x7f080003
 int id action_mode_bar 0x7f080030
 int id action_mode_bar_stub 0x7f08002f
 int id action_mode_close_button 0x7f080022
-int id action_settings 0x7f080045
+int id action_settings 0x7f080047
 int id activity_chooser_view_content 0x7f080023
 int id always 0x7f080016
 int id beginning 0x7f080013
@@ -398,8 +398,10 @@ int id submit_area 0x7f08003e
 int id tabMode 0x7f08000b
 int id title 0x7f080029
 int id top 0x7f08001f
-int id tvBody 0x7f080044
-int id tvUsername 0x7f080043
+int id tvBody 0x7f080045
+int id tvCreatedAt 0x7f080046
+int id tvName 0x7f080043
+int id tvUsername 0x7f080044
 int id up 0x7f080008
 int id useLogo 0x7f080012
 int id withText 0x7f08001a

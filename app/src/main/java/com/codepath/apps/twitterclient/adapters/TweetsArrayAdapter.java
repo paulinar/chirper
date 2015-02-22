@@ -23,8 +23,10 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
 
     private static class ViewHolder {
         ImageView ivProfilePic;
+        TextView tvName;
         TextView tvUsername;
         TextView tvBody;
+        TextView tvCreatedAt;
     }
 
     public TweetsArrayAdapter(Context context, List<Tweet> tweets) {
@@ -44,8 +46,10 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
             convertView = inflater.inflate(R.layout.item_tweet, parent, false); // parent = container, false = not yet insert into parent
             // 3. Find the subviews to fill with data in the template
             viewHolder.ivProfilePic = (ImageView) convertView.findViewById(R.id.ivProfilePic);
+            viewHolder.tvName = (TextView) convertView.findViewById(R.id.tvName);
             viewHolder.tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
             viewHolder.tvBody = (TextView) convertView.findViewById(R.id.tvBody);
+            viewHolder.tvCreatedAt = (TextView) convertView.findViewById(R.id.tvCreatedAt);
             convertView.setTag(viewHolder);
         } else { // recycled view
             viewHolder = (ViewHolder) convertView.getTag();
@@ -56,8 +60,10 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         Picasso.with(getContext())
                 .load(tweet.getUser().getProfileImageUrl())
                 .into(viewHolder.ivProfilePic);
+        viewHolder.tvName.setText(tweet.getUser().getName());
         viewHolder.tvUsername.setText(tweet.getUser().getScreenName());
         viewHolder.tvBody.setText(tweet.getBody());
+        viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
 
         // 5. Return the view to be inserted into the list
         return convertView;

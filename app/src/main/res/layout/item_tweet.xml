@@ -15,11 +15,21 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginRight="4dp"
+        android:layout_toRightOf="@id/ivProfilePic"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        android:layout_toRightOf="@id/ivProfilePic"
+        android:layout_toRightOf="@id/tvName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -28,7 +38,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
+        android:layout_below="@id/tvUsername"
         android:layout_toRightOf="@id/ivProfilePic"
         android:layout_alignBottom="@id/ivProfilePic" />
+
+    <TextView
+        android:id="@+id/tvCreatedAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created At"
+        android:layout_below="@id/tvUsername"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>
