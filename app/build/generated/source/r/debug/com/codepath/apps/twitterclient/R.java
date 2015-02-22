@@ -1318,6 +1318,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f080030;
         public static final int action_mode_bar_stub=0x7f08002f;
         public static final int action_mode_close_button=0x7f080022;
+        public static final int action_settings=0x7f080042;
         public static final int activity_chooser_view_content=0x7f080023;
         public static final int always=0x7f080016;
         public static final int beginning=0x7f080013;
@@ -1340,6 +1341,7 @@ containing a value of this type.
         public static final int image=0x7f080025;
         public static final int listMode=0x7f080009;
         public static final int list_item=0x7f080027;
+        public static final int lvTweets=0x7f080041;
         public static final int middle=0x7f080015;
         public static final int never=0x7f080019;
         public static final int none=0x7f08000e;
@@ -1399,10 +1401,12 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_login=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int activity_timeline=0x7f030018;
+        public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class menu {
         public static final int login=0x7f0c0000;
+        public static final int menu_timeline=0x7f0c0001;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;
@@ -1420,9 +1424,11 @@ containing a value of this type.
         public static final int abc_searchview_description_voice=0x7f0a000c;
         public static final int abc_shareactionprovider_share_with=0x7f0a000d;
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000e;
-        public static final int app_name=0x7f0a000f;
-        public static final int login_label=0x7f0a0010;
-        public static final int title_activity_timeline=0x7f0a0011;
+        public static final int action_settings=0x7f0a000f;
+        public static final int app_name=0x7f0a0010;
+        public static final int hello_world=0x7f0a0011;
+        public static final int login_label=0x7f0a0012;
+        public static final int title_activity_timeline=0x7f0a0013;
     }
     public static final class style {
         /** 
