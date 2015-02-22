@@ -61,7 +61,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
                 .load(tweet.getUser().getProfileImageUrl())
                 .into(viewHolder.ivProfilePic);
         viewHolder.tvName.setText(tweet.getUser().getName());
-        viewHolder.tvUsername.setText(tweet.getUser().getScreenName());
+        viewHolder.tvUsername.setText("@" + tweet.getUser().getScreenName());
         viewHolder.tvBody.setText(tweet.getBody());
         viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
 

@@ -1,5 +1,6 @@
 package com.codepath.apps.twitterclient.activities;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +12,7 @@ import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
 import com.codepath.apps.twitterclient.TwitterClient;
 import com.codepath.apps.twitterclient.adapters.TweetsArrayAdapter;
-import com.codepath.apps.twitterclient.helpers.EndlessScrollListener;
+import com.codepath.apps.twitterclient.listeners.EndlessScrollListener;
 import com.codepath.apps.twitterclient.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -23,10 +24,14 @@ import java.util.ArrayList;
 
 public class TimelineActivity extends ActionBarActivity {
 
+    private SwipeRefreshLayout swipeContainer;
+
     private TwitterClient client;
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
     private ListView lvTweets;
+
+    private static final int COUNT = 25;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,22 +44,36 @@ public class TimelineActivity extends ActionBarActivity {
         lvTweets.setAdapter(aTweets); // Connect adapter to listview
 
         client = TwitterApplication.getRestClient(); // singleton class; using same client across all activities
-        populateTimeline();
+        populateTimeline(COUNT, 0, false);
 
-//        // AEndless scroll: attach the listener to the AdapterView onCreate
-//        lvTweets.setOnScrollListener(new EndlessScrollListener() {
-//            @Override
-//            public void onLoadMore(int page, int totalItemsCount) {
-//                // Triggered only when new data needs to be appended to the list
-//                populateTimeline(page);
-//                // or customLoadMoreDataFromApi(totalItemsCount);
-//            }
-//        });
+        // Endless scroll: attach the listener to the AdapterView onCreate
+        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                // Triggered only when new data needs to be appended to the list
+                populateTimeline(COUNT, page, false);
+            }
+        });
+
+        // Pull-to-refresh: setup refresh listener which triggers new data loading
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                populateTimeline(COUNT, 0, true);
+            }
+        });
+
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
     }
 
     // Send API request to get timeline json and fill listview by creating tweet objects from json
-    private void populateTimeline() {
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
+    private void populateTimeline(int count, int page, final boolean clear) {
+        client.getHomeTimeline(count, page, new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -63,13 +82,29 @@ public class TimelineActivity extends ActionBarActivity {
                 // CREATE MODELS AN ADD THEM TO THE ADAPTER
                 // LOAD MODEL DATA INTO LISTVIEW
                 ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
-                aTweets.addAll(tweets);
 
+                if (clear) {
+                    aTweets.clear();
+                    aTweets.addAll(tweets);
+                    swipeContainer.setRefreshing(false);
+                } else {
+                    aTweets.addAll(tweets);
+                }
+
+//                if (clear) {
+//                    // Remember to CLEAR OUT old items before appending in the new ones
+//                    adapter.clear();
+//                    // ...the data has come back, add new items to your adapter...
+//                    adapter.addAll(...);
+//                    // Now we call setRefreshing(false) to signal refresh has finished
+//                    swipeContainer.setRefreshing(false);
+//                }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 Log.d("DEBUG", errorResponse.toString());
+                Log.d("DEBUG", throwable.toString());
             }
         });
     }
