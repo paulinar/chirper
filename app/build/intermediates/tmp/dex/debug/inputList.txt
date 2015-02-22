@@ -1,0 +1,11 @@
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/classes/debug
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-1e9759a5d79f0aa623f6ddb29a8b5d5f28d66b96.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-utils-7db31695a581c3293818caa8236c8a0ec976ec61.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-oauth-0.4.1-620557d805dba8d1b30d09e63514122335355461.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/ActiveAndroid-3.1-08c6335cd-4c3f6c04ce37eab4dabd2512c0257ee305871a2b.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/scribe-codepath-0.0.3-757e0389276a340fdc96889f862e99294efa7716.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.6-0014b2b27c2767e937d1696438a24a0f3b4d22c7.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/picasso-2.4.0-10c9690a882945c17b22802522897e732792aa23.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-1c1accd9d11ca5c6ed3a930994f13902ea16caf3.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-4cf3dc82b98469dc7d6e08df4c72eaf96371d097.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-5f75b63f4b74f8ed4c735a172a61de3e57549d2e.jar
