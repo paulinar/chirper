@@ -5,7 +5,7 @@
     android:paddingBottom="8dp"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
-    android:paddingTop="8dp"
+    android:paddingTop="10dp"
     tools:context="com.codepath.apps.twitterclient.activities.ComposeActivity" >
 
     <ImageView
@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/ic_close"/>
+        android:background="@drawable/ic_close"
+        android:onClick="cancelTweet" />
 
     <Button
         android:id="@+id/btnTweet"
@@ -30,10 +31,10 @@
 
     <TextView
         android:id="@+id/tvCharCount"
-        android:text="140"
+        android:text="@string/char_limit"
         android:textColor="@color/darkgray"
         android:textSize="13sp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +59,7 @@
         android:paddingTop="8dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:hint="What's happening?"
+        android:hint="@string/compose_hint"
         android:textSize="17sp"
         android:textColorHint="@color/darkgray"
         android:background="@null" >

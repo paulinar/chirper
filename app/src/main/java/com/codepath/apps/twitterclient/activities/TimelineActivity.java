@@ -1,13 +1,20 @@
 package com.codepath.apps.twitterclient.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
@@ -36,6 +43,12 @@ public class TimelineActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+        // ActionBar configuration
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.mipmap.ic_twitter_bird);
+        actionBar.setDisplayShowTitleEnabled(false);
 
         lvTweets = (ListView) findViewById(R.id.lvTweets); // Find the listview
         tweets = new ArrayList<>();  // Create the arraylist (data source)
@@ -72,42 +85,37 @@ public class TimelineActivity extends ActionBarActivity {
 
     // Send API request to get timeline json and fill listview by creating tweet objects from json
     private void populateTimeline(int page, final boolean clear) {
-        client.getHomeTimeline(page, new JsonHttpResponseHandler() {
+        if (!isNetworkAvailable()) {
+            Toast.makeText(getApplicationContext(), "No network connection available",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            client.getHomeTimeline(page, new JsonHttpResponseHandler() {
 
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-                Log.d("DEBUG", response.toString());
-                // DESERIALIZE JSON
-                // CREATE MODELS AN ADD THEM TO THE ADAPTER
-                // LOAD MODEL DATA INTO LISTVIEW
-                ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                    Log.d("DEBUG", response.toString());
+                    // DESERIALIZE JSON
+                    // CREATE MODELS AN ADD THEM TO THE ADAPTER
+                    // LOAD MODEL DATA INTO LISTVIEW
+                    ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
 
-                if (clear) {
-                    aTweets.clear();
-                    aTweets.addAll(tweets);
-                    swipeContainer.setRefreshing(false);
-                } else {
-                    aTweets.addAll(tweets);
+                    if (clear) {
+                        aTweets.clear();
+                        aTweets.addAll(tweets);
+                        swipeContainer.setRefreshing(false);
+                    } else {
+                        aTweets.addAll(tweets);
+                    }
                 }
 
-//                if (clear) {
-//                    // Remember to CLEAR OUT old items before appending in the new ones
-//                    adapter.clear();
-//                    // ...the data has come back, add new items to your adapter...
-//                    adapter.addAll(...);
-//                    // Now we call setRefreshing(false) to signal refresh has finished
-//                    swipeContainer.setRefreshing(false);
-//                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Log.d("DEBUG", errorResponse.toString());
-                Log.d("DEBUG", throwable.toString());
-            }
-        });
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("DEBUG", errorResponse.toString());
+                    Log.d("DEBUG", throwable.toString());
+                }
+            });
+        }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,12 +132,19 @@ public class TimelineActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_compose) {
             Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
             startActivity(intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private Boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 }

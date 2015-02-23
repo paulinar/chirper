@@ -27,6 +27,8 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         TextView tvUsername;
         TextView tvBody;
         TextView tvCreatedAt;
+        TextView tvRetweets;
+        TextView tvFavorites;
     }
 
     public TweetsArrayAdapter(Context context, List<Tweet> tweets) {
@@ -50,6 +52,8 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
             viewHolder.tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
             viewHolder.tvBody = (TextView) convertView.findViewById(R.id.tvBody);
             viewHolder.tvCreatedAt = (TextView) convertView.findViewById(R.id.tvCreatedAt);
+            viewHolder.tvRetweets = (TextView) convertView.findViewById(R.id.tvRetweets);
+            viewHolder.tvFavorites = (TextView) convertView.findViewById(R.id.tvFavorites);
             convertView.setTag(viewHolder);
         } else { // recycled view
             viewHolder = (ViewHolder) convertView.getTag();
@@ -64,6 +68,8 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.tvUsername.setText("@" + tweet.getUser().getScreenName());
         viewHolder.tvBody.setText(tweet.getBody());
         viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
+        viewHolder.tvRetweets.setText(String.valueOf(tweet.getRetweetCount()));
+        viewHolder.tvFavorites.setText(String.valueOf(tweet.getFavoriteCount()));
 
         // 5. Return the view to be inserted into the list
         return convertView;

@@ -1,6 +1,9 @@
 package com.codepath.apps.twitterclient.activities;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,19 +15,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
 import com.codepath.apps.twitterclient.TwitterClient;
 import com.codepath.apps.twitterclient.adapters.CurrentUserInfoArrayAdapter;
-import com.codepath.apps.twitterclient.adapters.TweetsArrayAdapter;
-import com.codepath.apps.twitterclient.models.Tweet;
 import com.codepath.apps.twitterclient.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.squareup.picasso.Picasso;
 
 import org.apache.http.Header;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -74,7 +74,7 @@ public class ComposeActivity extends ActionBarActivity {
                     tvCharCount.setTextColor(Color.RED);
                     btnTweet.setEnabled(false);
                 } else {
-                    tvCharCount.setTextColor(R.color.darkgray);
+                    tvCharCount.setTextColor(getResources().getColor(R.color.darkgray));
                     btnTweet.setEnabled(true);
                 }
                 tvCharCount.setText(String.valueOf(charSeq.length()));
@@ -83,22 +83,28 @@ public class ComposeActivity extends ActionBarActivity {
     }
 
     public void submitTweet(View v) {
-        String tweetBody = etTweetBody.getText().toString();
-        TwitterApplication.getRestClient().postTweet(new JsonHttpResponseHandler() {
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-                        Log.d("DEBUG", response.toString());
-                        setResult(RESULT_OK);
-                        finish();
-                    }
+        if (!isNetworkAvailable()) {
+            Toast.makeText(getApplicationContext(), "No network connection available",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            String tweetBody = etTweetBody.getText().toString();
+            TwitterApplication.getRestClient().postTweet(new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    Log.d("DEBUG", response.toString());
+                    setResult(RESULT_OK);
+                    finish();
+                }
 
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                        Log.d("DEBUG", errorResponse.toString());
-                        Log.d("DEBUG", throwable.toString());
-                    }
-                }, tweetBody);
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("DEBUG", errorResponse.toString());
+                    Log.d("DEBUG", throwable.toString());
+                }
+            }, tweetBody);
+        }
     }
+
 
     public void cancelTweet(View v) {
         finish();
@@ -120,5 +126,12 @@ public class ComposeActivity extends ActionBarActivity {
                 Log.d("DEBUG", throwable.toString());
             }
         });
+    }
+
+    private Boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 }

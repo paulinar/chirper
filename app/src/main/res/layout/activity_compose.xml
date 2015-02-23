@@ -31,7 +31,7 @@
 
     <TextView
         android:id="@+id/tvCharCount"
-        android:text="140"
+        android:text="@string/char_limit"
         android:textColor="@color/darkgray"
         android:textSize="13sp"
         android:layout_marginTop="8dp"
@@ -59,7 +59,7 @@
         android:paddingTop="8dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:hint="What's happening?"
+        android:hint="@string/compose_hint"
         android:textSize="17sp"
         android:textColorHint="@color/darkgray"
         android:background="@null" >

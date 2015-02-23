@@ -18,7 +18,7 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/name"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginRight="4dp"
@@ -30,7 +30,7 @@
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:text="@string/username"
         android:textColor="@color/darkgray"
         android:layout_toRightOf="@id/tvName"
         android:layout_alignParentTop="true"
@@ -40,7 +40,8 @@
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text="@string/text"
+        android:textSize="14sp"
         android:textColor="@color/black"
         android:ellipsize="end"
         android:maxLines="2"
@@ -54,10 +55,72 @@
         android:id="@+id/tvCreatedAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Created At"
+        android:text="@string/created_at"
         android:textColor="@color/darkgray"
         android:layout_below="@id/tvUsername"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/actions"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvBody"
+        android:layout_toRightOf="@id/ivProfilePic"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/ivReply"
+            android:background="@drawable/reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp" />
+
+        <ImageView
+            android:id="@+id/ivRetweet"
+            android:background="@drawable/retweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivReply" />
+
+        <TextView
+            android:id="@+id/tvRetweets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkgray"
+            android:textSize="10sp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@id/ivRetweet"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/ivFavorite"
+            android:background="@drawable/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvRetweets" />
+
+        <TextView
+            android:id="@+id/tvFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkgray"
+            android:textSize="10sp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@id/ivFavorite"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:background="@drawable/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
