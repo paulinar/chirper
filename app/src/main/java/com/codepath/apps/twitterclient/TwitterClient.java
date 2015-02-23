@@ -71,5 +71,4 @@ public class TwitterClient extends OAuthBaseClient {
         String apiUrl = getApiUrl("account/verify_credentials.json");
         getClient().get(apiUrl, handler);
     }
-
 }

@@ -22,7 +22,7 @@ Also implemented ViewHolder pattern for fast lookups.
 
 ## Walkthrough of all user stories
 
-![Video Walkthrough](walkthrough.gif)
+![Video Walkthrough](finalwalkthrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
