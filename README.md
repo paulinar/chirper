@@ -1,4 +1,4 @@
-# twitter-client
+# Chirper
 A Twitter client for Android.
 
 Time spent: ~15 hours spent in total
