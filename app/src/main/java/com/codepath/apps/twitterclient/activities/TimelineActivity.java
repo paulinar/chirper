@@ -1,5 +1,6 @@
 package com.codepath.apps.twitterclient.activities;
 
+import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -31,8 +32,6 @@ public class TimelineActivity extends ActionBarActivity {
     private TweetsArrayAdapter aTweets;
     private ListView lvTweets;
 
-    private static final int COUNT = 25;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +43,14 @@ public class TimelineActivity extends ActionBarActivity {
         lvTweets.setAdapter(aTweets); // Connect adapter to listview
 
         client = TwitterApplication.getRestClient(); // singleton class; using same client across all activities
-        populateTimeline(COUNT, 0, false);
+        populateTimeline(0, false);
 
         // Endless scroll: attach the listener to the AdapterView onCreate
         lvTweets.setOnScrollListener(new EndlessScrollListener() {
             @Override
             public void onLoadMore(int page, int totalItemsCount) {
                 // Triggered only when new data needs to be appended to the list
-                populateTimeline(COUNT, page, false);
+                populateTimeline(page, false);
             }
         });
 
@@ -60,7 +59,7 @@ public class TimelineActivity extends ActionBarActivity {
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                populateTimeline(COUNT, 0, true);
+                populateTimeline(0, true);
             }
         });
 
@@ -72,8 +71,8 @@ public class TimelineActivity extends ActionBarActivity {
     }
 
     // Send API request to get timeline json and fill listview by creating tweet objects from json
-    private void populateTimeline(int count, int page, final boolean clear) {
-        client.getHomeTimeline(count, page, new JsonHttpResponseHandler() {
+    private void populateTimeline(int page, final boolean clear) {
+        client.getHomeTimeline(page, new JsonHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -126,6 +125,8 @@ public class TimelineActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
+            startActivity(intent);
             return true;
         }
 

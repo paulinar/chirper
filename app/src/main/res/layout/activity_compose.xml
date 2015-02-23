@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="10dp"
+    tools:context="com.codepath.apps.twitterclient.activities.ComposeActivity" >
+
+    <ImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_close"
+        android:onClick="cancelTweet" />
+
+    <Button
+        android:id="@+id/btnTweet"
+        android:layout_width="65dp"
+        android:layout_height="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/tweet"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_shape"
+        android:onClick="submitTweet"/>
+
+    <TextView
+        android:id="@+id/tvCharCount"
+        android:text="140"
+        android:textColor="@color/darkgray"
+        android:textSize="13sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btnTweet"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <ListView
+        android:id="@+id/lvUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivCancel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <EditText
+        android:id="@+id/etTweetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lvUserInfo"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="What's happening?"
+        android:textSize="17sp"
+        android:textColorHint="@color/darkgray"
+        android:background="@null" >
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout>

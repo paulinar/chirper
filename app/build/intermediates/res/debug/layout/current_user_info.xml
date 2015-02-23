@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivProfilePic"
+        android:background="@drawable/ic_launcher"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/ivCancel"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginRight="4dp"
+        android:layout_below="@id/ivCancel"
+        android:layout_toRightOf="@id/ivProfilePic"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textColor="@color/gullgray"
+        android:textSize="15sp"
+        android:layout_below="@id/tvName"
+        android:layout_toRightOf="@id/ivProfilePic"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout><!-- From: file:/Users/paulina/Desktop/twitter-client/app/src/main/res/layout/current_user_info.xml -->

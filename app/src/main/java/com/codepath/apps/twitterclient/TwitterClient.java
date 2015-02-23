@@ -27,8 +27,6 @@ import com.loopj.android.http.RequestParams;
 public class TwitterClient extends OAuthBaseClient {
     public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class;
     public static final String REST_URL = "https://api.twitter.com/1.1/";
-//    public static final String REST_CONSUMER_KEY = "e2HLuNZgDwoBEPKBnvYWKFbXS";
-//    public static final String REST_CONSUMER_SECRET = "ofawkz3k3z99lZbPbJC2nB1JTsamYb6tzCBCWdsDEBSXdx3H0L";
     public static final String REST_CONSUMER_KEY = "ifvDhUmwlQWDkjyHfPDR4JlJ1";
     public static final String REST_CONSUMER_SECRET = "qoZJN39k7PyfaQBbKE4AoUk5xcT3hkkQb9ncqQKCzwvwb5dEHG";
     public static final String REST_CALLBACK_URL = "oauth://twitterclient"; // Change this (here and in manifest)
@@ -54,13 +52,25 @@ public class TwitterClient extends OAuthBaseClient {
 //        getClient().get(apiUrl, params, handler);
 //    }
 
-    public void getHomeTimeline(int count, int page,
-                                JsonHttpResponseHandler handler) {
+    public void getHomeTimeline(int page, JsonHttpResponseHandler handler) {
         String apiUrl = getApiUrl("statuses/home_timeline.json");
         RequestParams params = new RequestParams();
-        params.put("count", String.valueOf(count));
-        params.put("page", String.valueOf(page));
+        params.put("count", 25);
+        params.put("page", page);
         getClient().get(apiUrl, params, handler);
     }
+
+    public void postTweet(AsyncHttpResponseHandler handler, String tweetBody) {
+        String apiUrl = getApiUrl("statuses/home_timeline.json");
+        RequestParams params = new RequestParams();
+        params.put("status", tweetBody);
+        getClient().get(apiUrl, params, handler);
+    }
+
+    public void getCurrentUserInfo(JsonHttpResponseHandler handler) {
+        String apiUrl = getApiUrl("account/verify_credentials.json");
+        getClient().get(apiUrl, handler);
+    }
+
 
 }
