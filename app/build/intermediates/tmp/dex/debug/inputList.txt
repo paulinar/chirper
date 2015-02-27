@@ -1,6 +1,7 @@
 /Users/paulina/Desktop/twitter-client/app/build/intermediates/classes/debug
 /Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-1e9759a5d79f0aa623f6ddb29a8b5d5f28d66b96.jar
 /Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-utils-7db31695a581c3293818caa8236c8a0ec976ec61.jar
+/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-15d1cebcf8a285ae7d91096a48c98c80caa5bb83.jar
 /Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-oauth-0.4.1-620557d805dba8d1b30d09e63514122335355461.jar
 /Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/activeandroid-3.1.0-SNAPSHOT-c61526256aa5aa2e73bca6e9a5bb81f62405b68f.jar
 /Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/scribe-codepath-0.0.3-757e0389276a340fdc96889f862e99294efa7716.jar
