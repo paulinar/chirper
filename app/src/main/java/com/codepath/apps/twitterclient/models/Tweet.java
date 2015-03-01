@@ -1,6 +1,7 @@
 package com.codepath.apps.twitterclient.models;
 
 import android.text.format.DateUtils;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -127,9 +128,13 @@ public class Tweet implements Serializable {
             relativeTime = DateUtils.getRelativeTimeSpanString(dateMillis,
                     System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
             String[] pieces = relativeTime.split(" ");
-            String number = pieces[0];
-            char letter = pieces[1].charAt(0);
-            relativeTime = number + Character.toString(letter);
+            if (pieces.length < 2) {
+                Log.d("DEBUG", "No relative time to return.");
+            } else {
+                String number = pieces[0];
+                char letter = pieces[1].charAt(0);
+                relativeTime = number + Character.toString(letter);
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }

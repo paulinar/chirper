@@ -1468,7 +1468,7 @@ containing a value of this type.
         public static final int ivCancel=0x7f090041;
         public static final int ivFavorite=0x7f09005a;
         public static final int ivProfileImage=0x7f090047;
-        public static final int ivProfilePic=0x7f090051;
+        public static final int ivProfilePic=0x7f090050;
         public static final int ivReply=0x7f090057;
         public static final int ivRetweet=0x7f090058;
         public static final int listMode=0x7f090009;
@@ -1500,9 +1500,9 @@ containing a value of this type.
         public static final int showTitle=0x7f090011;
         public static final int split_action_bar=0x7f090007;
         public static final int submit_area=0x7f09003e;
-        public static final int swipeContainer=0x7f09004e;
+        public static final int swipeContainer=0x7f090052;
         public static final int tabMode=0x7f09000b;
-        public static final int tabs=0x7f09004f;
+        public static final int tabs=0x7f09004e;
         public static final int title=0x7f090029;
         public static final int top=0x7f09001f;
         public static final int tvBody=0x7f090054;
@@ -1514,10 +1514,10 @@ containing a value of this type.
         public static final int tvName=0x7f090048;
         public static final int tvRetweets=0x7f090059;
         public static final int tvTagline=0x7f090049;
-        public static final int tvUsername=0x7f090052;
+        public static final int tvUsername=0x7f090051;
         public static final int up=0x7f090008;
         public static final int useLogo=0x7f090012;
-        public static final int viewpager=0x7f090050;
+        public static final int viewpager=0x7f09004f;
         public static final int withText=0x7f09001a;
         public static final int wrap_content=0x7f09001d;
     }

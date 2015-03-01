@@ -3,6 +3,7 @@ package com.codepath.apps.twitterclient.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,9 @@ import java.util.List;
 public class TweetsListFragment extends Fragment {
 
     private ArrayList<Tweet> tweets;
-    private TweetsArrayAdapter aTweets;
-    private ListView lvTweets;
+    protected TweetsArrayAdapter aTweets;
+    protected ListView lvTweets;
+    protected SwipeRefreshLayout swipeContainer;
 
     // inflation logic
     @Override
@@ -34,6 +36,14 @@ public class TweetsListFragment extends Fragment {
         lvTweets = (ListView) v.findViewById(R.id.lvTweets); // Find the listview
 
         lvTweets.setAdapter(aTweets); // Connect adapter to listview
+
+        // Pull-to-refresh: setup refresh listener which triggers new data loading
+        swipeContainer = (SwipeRefreshLayout) v.findViewById(R.id.swipeContainer);
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
 
         return v;
     }

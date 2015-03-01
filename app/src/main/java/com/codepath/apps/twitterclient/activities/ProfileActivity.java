@@ -1,6 +1,5 @@
 package com.codepath.apps.twitterclient.activities;
 
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -30,7 +29,7 @@ public class ProfileActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        User user = (User) getIntent().getSerializableExtra("user");
+        user = (User) getIntent().getSerializableExtra("user");
         client = TwitterApplication.getRestClient();
 
         if (user != null && savedInstanceState == null) {
@@ -88,15 +87,12 @@ public class ProfileActivity extends ActionBarActivity {
     }
 
     private void setupFragment(User user) {
-        // Get screenname from TimelineActivity
-//        String screenName = getIntent().getStringExtra("screen_name");
+        // Create the user timeline fragment
+        UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(user);
 
-            // Create the user timeline fragment
-            UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(user);
-
-            // Display user timeline fragment within this activity (dynamically... so needs a container)
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.flContainer, fragmentUserTimeline); // insert fragment dynamically into FrameLayout
-            ft.commit();
+        // Display user timeline fragment within this activity (dynamically... so needs a container)
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.flContainer, fragmentUserTimeline); // insert fragment dynamically into FrameLayout
+        ft.commit();
     }
 }

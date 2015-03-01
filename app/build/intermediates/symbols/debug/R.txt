@@ -411,7 +411,7 @@ int id ivAdd 0x7f09005c
 int id ivCancel 0x7f090041
 int id ivFavorite 0x7f09005a
 int id ivProfileImage 0x7f090047
-int id ivProfilePic 0x7f090051
+int id ivProfilePic 0x7f090050
 int id ivReply 0x7f090057
 int id ivRetweet 0x7f090058
 int id listMode 0x7f090009
@@ -443,9 +443,9 @@ int id showHome 0x7f090010
 int id showTitle 0x7f090011
 int id split_action_bar 0x7f090007
 int id submit_area 0x7f09003e
-int id swipeContainer 0x7f09004e
+int id swipeContainer 0x7f090052
 int id tabMode 0x7f09000b
-int id tabs 0x7f09004f
+int id tabs 0x7f09004e
 int id title 0x7f090029
 int id top 0x7f09001f
 int id tvBody 0x7f090054
@@ -457,10 +457,10 @@ int id tvFollowing 0x7f09004c
 int id tvName 0x7f090048
 int id tvRetweets 0x7f090059
 int id tvTagline 0x7f090049
-int id tvUsername 0x7f090052
+int id tvUsername 0x7f090051
 int id up 0x7f090008
 int id useLogo 0x7f090012
-int id viewpager 0x7f090050
+int id viewpager 0x7f09004f
 int id withText 0x7f09001a
 int id wrap_content 0x7f09001d
 int integer abc_max_action_buttons 0x7f0a0000

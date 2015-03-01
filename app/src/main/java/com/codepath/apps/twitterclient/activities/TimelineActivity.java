@@ -72,29 +72,6 @@ public class TimelineActivity extends ActionBarActivity {
 //            fragmentTweetsList = (TweetsListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_timeline);
 //        }
 
-//        // Endless scroll: attach the listener to the AdapterView onCreate
-//        lvTweets.setOnScrollListener(new EndlessScrollListener() {
-//            @Override
-//            public void onLoadMore(int page, int totalItemsCount) {
-//                // Triggered only when new data needs to be appended to the list
-//                populateTimeline(page, false);
-//            }
-//        });
-
-//        // Pull-to-refresh: setup refresh listener which triggers new data loading
-//        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
-//        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                populateTimeline(0, true);
-//            }
-//        });
-//
-//        // Configure the refreshing colors
-//        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
-//                android.R.color.holo_green_light,
-//                android.R.color.holo_orange_light,
-//                android.R.color.holo_red_light);
     }
 
     @Override

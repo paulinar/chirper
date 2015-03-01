@@ -70,7 +70,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.tvName.setText(tweet.getUser().getName());
         viewHolder.tvUsername.setText("@" + tweet.getUser().getScreenName());
         viewHolder.tvBody.setText(tweet.getBody());
-//        viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
+        viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
         viewHolder.tvRetweets.setText(String.valueOf(tweet.getRetweetCount()));
         viewHolder.tvFavorites.setText(String.valueOf(tweet.getFavoriteCount()));
 
