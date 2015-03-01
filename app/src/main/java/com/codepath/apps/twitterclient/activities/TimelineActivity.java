@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -114,9 +115,9 @@ public class TimelineActivity extends ActionBarActivity {
         if (id == R.id.action_compose) {
             Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
             startActivity(intent);
-            return true;
+        } else if (id == R.id.action_profile) {
+            onProfileView(item);
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -129,7 +130,6 @@ public class TimelineActivity extends ActionBarActivity {
 
     // return the order of the fragments in the ViewPager
     public class TweetsPagerAdapter extends FragmentPagerAdapter {
-        final int PAGE_COUNT = 2;
         private String tabTitles[] = { "Home", "Mentions" };
 
         // adapter gets the manager to insert or remove fragments from the activity
@@ -159,6 +159,13 @@ public class TimelineActivity extends ActionBarActivity {
         @Override
         public int getCount() {
             return tabTitles.length;
+        }
+    }
+
+    public void onProfileView(MenuItem mi) {
+        if (mi.getItemId() == R.id.action_profile) {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         }
     }
 }

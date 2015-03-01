@@ -16,16 +16,15 @@ Time spent: ~15 hours spent in total
  * [x] User can switch between Timeline and Mention views using tabs.
  * [x] User can view their home timeline tweets.
  * [x] User can view the recent mentions of their username.
- * [] User can navigate to view their own profile
+ * [x] User can navigate to view their own profile
  * [] User can see picture, tagline, # of followers, # of following, and tweets on their profile or another user's profile.
  * [] User can click on the profile image in any tweet to see another user's profile.
- * [] Profile view should include that user's timeline
  * [] User can infinitely paginate any of these timelines (home, mentions, user) by scrolling to the bottom
  * [x] *Optional:* Links in tweets are clickable and will launch the web browser (see autolink)
  * [x] *Optional:* User can see a counter with total number of characters left for tweet
  * [x] *Optional:* User can refresh tweets timeline by pulling down to refresh (i.e pull-to-refresh)
  * [x] *Optional:* Improve the user interface and theme the app to feel "twitter branded"
- * [] Optional: User can view following / followers list through the profile
+ * [] *Optional:* User can view following / followers list through the profile
 
 Also implemented ViewHolder pattern for fast lookups.
 

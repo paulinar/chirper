@@ -1,6 +1,7 @@
 package com.codepath.apps.twitterclient.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codepath.apps.twitterclient.R;
+import com.codepath.apps.twitterclient.activities.ProfileActivity;
 import com.codepath.apps.twitterclient.models.Tweet;
+import com.codepath.apps.twitterclient.models.User;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -39,7 +42,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
     public View getView(int position, View convertView, ViewGroup parent) {
         // 1. Get the tweet
         Tweet tweet = getItem(position);
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
 
         // 2. Find or inflate the template
         if (convertView == null) {
@@ -67,9 +70,19 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.tvName.setText(tweet.getUser().getName());
         viewHolder.tvUsername.setText("@" + tweet.getUser().getScreenName());
         viewHolder.tvBody.setText(tweet.getBody());
-        viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
+//        viewHolder.tvCreatedAt.setText(Tweet.getRelativeTimeAgo(tweet.getCreatedAt()));
         viewHolder.tvRetweets.setText(String.valueOf(tweet.getRetweetCount()));
         viewHolder.tvFavorites.setText(String.valueOf(tweet.getFavoriteCount()));
+
+        viewHolder.ivProfilePic.setTag(tweet.getUser());
+        viewHolder.ivProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), ProfileActivity.class);
+                i.putExtra("user", (User) viewHolder.ivProfilePic.getTag()); // so we can use the same OnClickListener for every profile pic
+                getContext().startActivity(i);
+            }
+        });
 
         // 5. Return the view to be inserted into the list
         return convertView;
