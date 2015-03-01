@@ -1,5 +1,8 @@
 package com.codepath.apps.twitterclient.activities;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
@@ -37,15 +41,22 @@ public class ProfileActivity extends ActionBarActivity {
             populateProfileHeader(user);
             setupFragment(user);
         } else {
-            client.getCurrentUserInfo(new JsonHttpResponseHandler() {
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                    User currentUser = User.fromJSON(response);
-                    if (savedInstanceState == null) { setupFragment(currentUser); }
-                    getSupportActionBar().setTitle("@" + currentUser.getScreenName());
-                    populateProfileHeader(currentUser);
-                }
-            });
+            if (!isNetworkAvailable()) {
+                Toast.makeText(getApplicationContext(), "No network connection available",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                client.getCurrentUserInfo(new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        User currentUser = User.fromJSON(response);
+                        if (savedInstanceState == null) {
+                            setupFragment(currentUser);
+                        }
+                        getSupportActionBar().setTitle("@" + currentUser.getScreenName());
+                        populateProfileHeader(currentUser);
+                    }
+                });
+            }
         }
     }
 
@@ -94,5 +105,12 @@ public class ProfileActivity extends ActionBarActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.flContainer, fragmentUserTimeline); // insert fragment dynamically into FrameLayout
         ft.commit();
+    }
+
+    private Boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 }

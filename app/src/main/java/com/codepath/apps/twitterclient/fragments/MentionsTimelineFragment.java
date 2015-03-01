@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
@@ -67,31 +68,35 @@ public class MentionsTimelineFragment extends TweetsListFragment {
 
     // Send API request to get timeline json and fill listview by creating tweet objects from json
     private void populateTimeline(int page, final boolean clear) {
-        client.getMentionsTimeline(page, new JsonHttpResponseHandler() {
+        if (!isNetworkAvailable()) {
+            Toast.makeText(getActivity().getApplicationContext(), "No network connection available",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            client.getMentionsTimeline(page, new JsonHttpResponseHandler() {
 
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-                Log.d("DEBUG", response.toString());
-                // DESERIALIZE JSON
-                // CREATE MODELS AN ADD THEM TO THE ADAPTER
-                // LOAD MODEL DATA INTO LISTVIEW
-                ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                    Log.d("DEBUG", response.toString());
+                    // DESERIALIZE JSON
+                    // CREATE MODELS AN ADD THEM TO THE ADAPTER
+                    // LOAD MODEL DATA INTO LISTVIEW
+                    ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
 
-                if (clear) {
-                    clear();
-                    addAll(tweets);
+                    if (clear) {
+                        clear();
+                        addAll(tweets);
                         swipeContainer.setRefreshing(false); // TODO: REIMPLEMENT!
-                } else {
-                    addAll(tweets);
+                    } else {
+                        addAll(tweets);
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Log.d("DEBUG", errorResponse.toString());
-                Log.d("DEBUG", throwable.toString());
-            }
-        });
-
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("DEBUG", errorResponse.toString());
+                    Log.d("DEBUG", throwable.toString());
+                }
+            });
+        }
     }
 }

@@ -1,5 +1,8 @@
 package com.codepath.apps.twitterclient.fragments;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -68,7 +71,12 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
     // Send API request to get timeline json and fill listview by creating tweet objects from json
     private void populateTimeline(int page, final boolean clear) {
-        client.getHomeTimeline(page, new JsonHttpResponseHandler() {
+        if (!isNetworkAvailable()) {
+            Toast.makeText(getActivity().getApplicationContext(), "No network connection available",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+
+            client.getHomeTimeline(page, new JsonHttpResponseHandler() {
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -93,7 +101,6 @@ public class HomeTimelineFragment extends TweetsListFragment {
                     Log.d("DEBUG", throwable.toString());
                 }
             });
-
+        }
     }
-
 }

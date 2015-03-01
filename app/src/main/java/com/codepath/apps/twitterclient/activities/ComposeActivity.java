@@ -111,21 +111,26 @@ public class ComposeActivity extends ActionBarActivity {
     }
 
     private void populateCurrentUserInfo() {
-        client.getCurrentUserInfo(new JsonHttpResponseHandler() {
+        if (!isNetworkAvailable()) {
+            Toast.makeText(getApplicationContext(), "No network connection available",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            client.getCurrentUserInfo(new JsonHttpResponseHandler() {
 
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                Log.d("DEBUG", response.toString());
-                User userInfo = User.fromJSON(response);
-                aUserInfo.add(userInfo);
-            }
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    Log.d("DEBUG", response.toString());
+                    User userInfo = User.fromJSON(response);
+                    aUserInfo.add(userInfo);
+                }
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Log.d("DEBUG", errorResponse.toString());
-                Log.d("DEBUG", throwable.toString());
-            }
-        });
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("DEBUG", errorResponse.toString());
+                    Log.d("DEBUG", throwable.toString());
+                }
+            });
+        }
     }
 
     private Boolean isNetworkAvailable() {
