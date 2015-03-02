@@ -1,8 +1,5 @@
 package com.codepath.apps.twitterclient.fragments;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,6 +15,7 @@ import com.codepath.apps.twitterclient.TwitterApplication;
 import com.codepath.apps.twitterclient.TwitterClient;
 import com.codepath.apps.twitterclient.listeners.EndlessScrollListener;
 import com.codepath.apps.twitterclient.models.Tweet;
+import com.codepath.apps.twitterclient.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.apache.http.Header;
@@ -65,17 +63,28 @@ public class HomeTimelineFragment extends TweetsListFragment {
                 populateTimeline(0, true);
             }
         });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
 
         return view;
     }
 
+    public static HomeTimelineFragment newInstance() {
+        HomeTimelineFragment homeTimelineFragment = new HomeTimelineFragment();
+        return homeTimelineFragment;
+    }
+
     // Send API request to get timeline json and fill listview by creating tweet objects from json
-    private void populateTimeline(int page, final boolean clear) {
+    public void populateTimeline(int page, final boolean clear) {
         if (!isNetworkAvailable()) {
             Toast.makeText(getActivity().getApplicationContext(), "No network connection available",
                     Toast.LENGTH_SHORT).show();
+            clear();
+            addAll(Tweet.fromCache());
         } else {
-
             client.getHomeTimeline(page, new JsonHttpResponseHandler() {
 
                 @Override
@@ -87,6 +96,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
                     ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
 
                     if (clear) {
+                        deleteDbData();
                         clear();
                         addAll(tweets);
                         swipeContainer.setRefreshing(false);
@@ -103,4 +113,5 @@ public class HomeTimelineFragment extends TweetsListFragment {
             });
         }
     }
+
 }

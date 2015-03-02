@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.adapters.TweetsArrayAdapter;
 import com.codepath.apps.twitterclient.models.Tweet;
+import com.codepath.apps.twitterclient.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,11 +43,6 @@ public class TweetsListFragment extends Fragment {
 
         // Pull-to-refresh: setup refresh listener which triggers new data loading
         swipeContainer = (SwipeRefreshLayout) v.findViewById(R.id.swipeContainer);
-        // Configure the refreshing colors
-        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
-                android.R.color.holo_green_light,
-                android.R.color.holo_orange_light,
-                android.R.color.holo_red_light);
 
         return v;
     }
@@ -66,8 +62,17 @@ public class TweetsListFragment extends Fragment {
         aTweets.addAll(tweets);
     }
 
+    public void appendTweet(Tweet newTweet) {
+        aTweets.insert(newTweet, 0);
+    }
+
     public void clear() {
         aTweets.clear();
+    }
+
+    protected void deleteDbData() {
+        Tweet.deleteAllTweets();
+        User.deleteAllUsers();
     }
 
     protected Boolean isNetworkAvailable() {

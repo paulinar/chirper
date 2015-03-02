@@ -58,6 +58,13 @@
         <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/picasso-2.4.0-10c9690a882945c17b22802522897e732792aa23.jar" />
     </item>
     <item
+        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.github.johnkil.android-progressfragment/progressfragment/1.4.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8de4e8b73125d261ce4ab4a369a49c3fb4a7ab1d">
+        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-85a51b67897907f096f93de7a6a0bb184ea90efc.jar" />
+    </item>
+    <item
         jar="/Users/paulina/Desktop/Installed/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"

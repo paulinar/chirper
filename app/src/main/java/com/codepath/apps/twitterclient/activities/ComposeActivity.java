@@ -1,6 +1,7 @@
 package com.codepath.apps.twitterclient.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -21,6 +22,7 @@ import com.codepath.apps.twitterclient.R;
 import com.codepath.apps.twitterclient.TwitterApplication;
 import com.codepath.apps.twitterclient.TwitterClient;
 import com.codepath.apps.twitterclient.adapters.CurrentUserInfoArrayAdapter;
+import com.codepath.apps.twitterclient.models.Tweet;
 import com.codepath.apps.twitterclient.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -87,12 +89,14 @@ public class ComposeActivity extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "No network connection available",
                     Toast.LENGTH_SHORT).show();
         } else {
-            String tweetBody = etTweetBody.getText().toString();
+            final String tweetBody = etTweetBody.getText().toString();
             TwitterApplication.getRestClient().postTweet(new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                     Log.d("DEBUG", response.toString());
-                    setResult(RESULT_OK);
+                    Intent i = new Intent();
+                    i.putExtra("newTweet", Tweet.fromJSON(response));
+                    setResult(RESULT_OK, i);
                     finish();
                 }
 

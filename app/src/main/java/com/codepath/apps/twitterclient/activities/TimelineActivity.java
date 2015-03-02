@@ -29,6 +29,7 @@ import com.codepath.apps.twitterclient.adapters.TweetsArrayAdapter;
 import com.codepath.apps.twitterclient.fragments.HomeTimelineFragment;
 import com.codepath.apps.twitterclient.fragments.MentionsTimelineFragment;
 import com.codepath.apps.twitterclient.fragments.TweetsListFragment;
+import com.codepath.apps.twitterclient.fragments.UserTimelineFragment;
 import com.codepath.apps.twitterclient.listeners.EndlessScrollListener;
 import com.codepath.apps.twitterclient.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
 
 public class TimelineActivity extends ActionBarActivity {
 
-    private SwipeRefreshLayout swipeContainer;
+    private final int REQUEST_CODE = 999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +91,8 @@ public class TimelineActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_compose) {
-            Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
-            startActivity(intent);
+            Intent i = new Intent(TimelineActivity.this, ComposeActivity.class);
+            startActivityForResult(i, REQUEST_CODE);
         } else if (id == R.id.action_profile) {
             onProfileView(item);
         }
@@ -121,9 +122,8 @@ public class TimelineActivity extends ActionBarActivity {
                 return new HomeTimelineFragment();
             } else if (position == 1) {
                 return new MentionsTimelineFragment();
-            }         else {
-                return null;
             }
+            return null;
         }
 
         // returns tab title at top
@@ -144,5 +144,20 @@ public class TimelineActivity extends ActionBarActivity {
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent i) {
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+            Tweet newTweet = (Tweet) i.getSerializableExtra("newTweet");
+
+            HomeTimelineFragment fragmentTweetList = (HomeTimelineFragment) getSupportFragmentManager()
+                    .findFragmentByTag(getFragmentName(R.id.viewpager, 0));
+            fragmentTweetList.appendTweet(newTweet);
+            fragmentTweetList.populateTimeline(0, false);
+        }
+    }
+
+    private static String getFragmentName(int viewId, int index) {
+        return "android:switcher:" + viewId + ":" + index;
     }
 }

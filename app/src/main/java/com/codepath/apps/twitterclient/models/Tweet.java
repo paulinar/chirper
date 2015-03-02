@@ -1,5 +1,13 @@
 package com.codepath.apps.twitterclient.models;
 
+import com.activeandroid.Cache;
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
+
+import android.database.Cursor;
 import android.text.format.DateUtils;
 import android.util.Log;
 
@@ -11,6 +19,7 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -18,13 +27,34 @@ import java.util.Locale;
  */
 
 // Parse the JSON + store data + encapsulate state logic or display logic
-public class Tweet implements Serializable {
+@Table(name = "Tweets")
+public class Tweet extends Model implements Serializable {
+
+    private static final long serialVersionUID = -2454839958978109603L;
+
+    @Column(name = "body")
     private String body;
+
+    @Column(name = "uid", index = true, unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
     private long uid; // unique uid for tweet
+
+    // This is an association to another activeandroid model
+    @Column(name = "user", onUpdate = Column.ForeignKeyAction.CASCADE, onDelete = Column.ForeignKeyAction.CASCADE)
     private User user;
+
+    @Column(name = "created_at")
     private String createdAt;
+
+    @Column(name = "retweet_count")
     private int retweetCount;
+
+    @Column(name = "favorite_count")
     private int favoriteCount;
+
+    // Make sure to have a default constructor for every ActiveAndroid model
+    public Tweet(){
+        super();
+    }
 
     public void setBody(String body) {
         this.body = body;
@@ -81,12 +111,21 @@ public class Tweet implements Serializable {
 
         // Extract values from the json and store them
         try {
+            Long currentUid = jsonObject.getLong("id");
+            Tweet existingTweet = new Select().from(Tweet.class)
+                                              .where("uid = ?", currentUid)
+                                              .executeSingle();
+            if (existingTweet != null) {
+                tweet = existingTweet;
+            }
             tweet.body = jsonObject.getString("text");
-            tweet.uid = jsonObject.getLong("id");
+            tweet.uid = currentUid;
             tweet.createdAt = jsonObject.getString("created_at");
             tweet.user = User.fromJSON(jsonObject.getJSONObject("user"));
             tweet.retweetCount = jsonObject.getInt("retweet_count");
             tweet.favoriteCount = jsonObject.getInt("favorite_count");
+
+            tweet.save();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -142,4 +181,16 @@ public class Tweet implements Serializable {
         return relativeTime;
     }
 
+    public static ArrayList<Tweet> fromCache() {
+        ArrayList<Tweet> alTweets = new ArrayList<>();
+        List<Tweet> lTweets = new Select()
+                .from(Tweet.class)
+                .execute();
+        alTweets.addAll(lTweets);
+        return alTweets;
+    }
+
+    public static void deleteAllTweets() {
+        new Delete().from(Tweet.class).execute();
+    }
 }
