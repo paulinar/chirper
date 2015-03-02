@@ -89,7 +89,7 @@ public class ComposeActivity extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "No network connection available",
                     Toast.LENGTH_SHORT).show();
         } else {
-            final String tweetBody = etTweetBody.getText().toString();
+            String tweetBody = etTweetBody.getText().toString();
             TwitterApplication.getRestClient().postTweet(new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

@@ -36,14 +36,13 @@ Time spent for Part B: ~10 hours
   	* [x] Profile view should include that user's timeline
  * [x] User can infinitely paginate any of these timelines (home, mentions, user) by scrolling to the bottom
  * [x] *Advanced:* Robust error handling, check if internet is available, handle error cases, network failures
- * [] *Advanced:* User can take favorite (and unfavorite) or reweet actions on a tweet
  * [x] *Advanced:* Improve the user interface and theme the app to feel twitter branded
 
 Also implemented ViewHolder pattern for fast lookups.
 
 ## Walkthrough of all user stories
 
-![Video Walkthrough](finalwalkthrough.gif)
+![Video Walkthrough](images/finalwalkthrough2.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 Icons credited to [NounProject](http://thenounproject.com).

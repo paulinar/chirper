@@ -201,6 +201,7 @@
     <string name="created_at">Created At</string>
     <string name="hello_world">Hello world!</string>
     <string name="login_label">Connect to Twitter</string>
+    <string name="mari_inu">\@mari_inu</string>
     <string name="name">Name</string>
     <string name="text">Text</string>
     <string name="title_activity_compose">ComposeActivity</string>

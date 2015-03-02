@@ -1595,13 +1595,14 @@ containing a value of this type.
         public static final int created_at=0x7f0b0018;
         public static final int hello_world=0x7f0b0019;
         public static final int login_label=0x7f0b001a;
-        public static final int name=0x7f0b001b;
-        public static final int text=0x7f0b001c;
-        public static final int title_activity_compose=0x7f0b001d;
-        public static final int title_activity_profile=0x7f0b001e;
-        public static final int title_activity_timeline=0x7f0b001f;
-        public static final int tweet=0x7f0b0020;
-        public static final int username=0x7f0b0021;
+        public static final int mari_inu=0x7f0b001b;
+        public static final int name=0x7f0b001c;
+        public static final int text=0x7f0b001d;
+        public static final int title_activity_compose=0x7f0b001e;
+        public static final int title_activity_profile=0x7f0b001f;
+        public static final int title_activity_timeline=0x7f0b0020;
+        public static final int tweet=0x7f0b0021;
+        public static final int username=0x7f0b0022;
     }
     public static final class style {
         /** 

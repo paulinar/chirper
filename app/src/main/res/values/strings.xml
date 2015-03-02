@@ -20,5 +20,6 @@
     <string name="char_limit">140</string>
     <string name="compose_hint">What\'s happening?</string>
     <string name="title_activity_profile">ProfileActivity</string>
+    <string name="mari_inu">\@mari_inu</string>
 
 </resources>
