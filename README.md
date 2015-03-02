@@ -1,13 +1,12 @@
 # Chirper
 A Twitter client for Android.
 
-Time spent for Part A: ~15 hours
-
-Time spent for Part B: ~10 hours
-
 ## Completed user stories:
 
-# Part A
+* Time spent for Part A: ~15 hours
+* Time spent for Part B: ~10 hours
+
+### Part A
 
  * [x] User can sign in to Twitter using OAuth login
  * [x] User can view the tweets from their home timeline
@@ -25,7 +24,7 @@ Time spent for Part B: ~10 hours
   	* [x] Tweets are persisted into sqlite and can be displayed from the local DB
  * [x] *Advanced:* Improve the user interface and theme the app to feel "twitter branded"
 
-# Part B
+### Part B
 
  * [x] User can switch between Timeline and Mention views using tabs.
   	* [x] User can view their home timeline tweets.
