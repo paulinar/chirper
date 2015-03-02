@@ -2,6 +2,7 @@
 A Twitter client for Android.
 
 Time spent for Part A: ~15 hours
+
 Time spent for Part B: ~10 hours
 
 ## Completed user stories:
@@ -45,6 +46,7 @@ Also implemented ViewHolder pattern for fast lookups.
 ![Video Walkthrough](images/finalwalkthrough2.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 Icons credited to [NounProject](http://thenounproject.com).
 
 ## Libraries
