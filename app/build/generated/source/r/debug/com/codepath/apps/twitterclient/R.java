@@ -1429,7 +1429,7 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f090001;
         public static final int action_bar_subtitle=0x7f090021;
         public static final int action_bar_title=0x7f090020;
-        public static final int action_compose=0x7f09005f;
+        public static final int action_compose=0x7f09005e;
         public static final int action_context_bar=0x7f090034;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
@@ -1437,7 +1437,7 @@ containing a value of this type.
         public static final int action_mode_bar_stub=0x7f09002f;
         public static final int action_mode_close_button=0x7f090022;
         public static final int action_notifications=0x7f090061;
-        public static final int action_profile=0x7f09005e;
+        public static final int action_profile=0x7f09005f;
         public static final int action_search=0x7f090060;
         public static final int action_settings=0x7f09005d;
         public static final int actions=0x7f090056;

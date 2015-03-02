@@ -67,7 +67,6 @@ public class TimelineActivity extends ActionBarActivity {
         // 4. Attach the tabstrip to the viewpager
         tabStrip.setViewPager(vpPager);
 
-        // NO LONGER NEED THIS
 //        if (savedInstanceState == null) { // if it wasn't null, means activity was inflated in the past and this fragment is already in memory
 //            // access the fragment
 //            fragmentTweetsList = (TweetsListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_timeline);
@@ -97,13 +96,6 @@ public class TimelineActivity extends ActionBarActivity {
             onProfileView(item);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private Boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
     // return the order of the fragments in the ViewPager

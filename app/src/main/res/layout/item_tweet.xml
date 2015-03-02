@@ -44,12 +44,11 @@
         android:textSize="14sp"
         android:textColor="@color/black"
         android:ellipsize="end"
-        android:maxLines="2"
+        android:maxLines="4"
         android:autoLink="all"
         android:linksClickable="true"
         android:layout_below="@id/tvUsername"
-        android:layout_toRightOf="@id/ivProfilePic"
-        android:layout_alignBottom="@id/ivProfilePic" />
+        android:layout_toRightOf="@id/ivProfilePic" />
 
     <TextView
         android:id="@+id/tvCreatedAt"

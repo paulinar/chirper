@@ -1,5 +1,6 @@
 package com.codepath.apps.twitterclient.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.codepath.apps.twitterclient.R;
@@ -86,7 +88,6 @@ public class HomeTimelineFragment extends TweetsListFragment {
             addAll(Tweet.fromCache());
         } else {
             client.getHomeTimeline(page, new JsonHttpResponseHandler() {
-
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                     Log.d("DEBUG", response.toString());

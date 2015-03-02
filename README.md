@@ -36,12 +36,8 @@ Time spent for Part B: ~10 hours
   	* [x] Profile view should include that user's timeline
  * [x] User can infinitely paginate any of these timelines (home, mentions, user) by scrolling to the bottom
  * [x] *Advanced:* Robust error handling, check if internet is available, handle error cases, network failures
- * [] *Advanced:* When a network request is sent, user sees an indeterminate progress indicator
- * [] *Advanced:* User can "reply" to any tweet on their home timeline
-   	* [] The user that wrote the original tweet is automatically "@" replied in compose
  * [] *Advanced:* User can take favorite (and unfavorite) or reweet actions on a tweet
  * [x] *Advanced:* Improve the user interface and theme the app to feel twitter branded
- // * [] *Advanced:* User can search for tweets matching a particular query and see results
 
 Also implemented ViewHolder pattern for fast lookups.
 
