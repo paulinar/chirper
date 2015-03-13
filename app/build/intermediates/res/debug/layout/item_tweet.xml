@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/username"
-        android:textColor="@color/darkgray"
+        android:textColor="@color/dark_gray"
         android:layout_toRightOf="@id/tvName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/created_at"
-        android:textColor="@color/darkgray"
+        android:textColor="@color/dark_gray"
         android:layout_below="@id/tvUsername"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true" />
@@ -70,14 +70,14 @@
 
         <ImageView
             android:id="@+id/ivReply"
-            android:background="@drawable/reply"
+            android:background="@drawable/ic_reply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="50dp" />
 
         <ImageView
             android:id="@+id/ivRetweet"
-            android:background="@drawable/retweet"
+            android:background="@drawable/ic_retweet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ivReply" />
@@ -86,8 +86,8 @@
             android:id="@+id/tvRetweets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkgray"
-            android:textSize="10sp"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="50dp"
             android:layout_toRightOf="@id/ivRetweet"
@@ -96,7 +96,7 @@
 
         <ImageView
             android:id="@+id/ivFavorite"
-            android:background="@drawable/star"
+            android:background="@drawable/ic_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tvRetweets" />
@@ -105,8 +105,8 @@
             android:id="@+id/tvFavorites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/darkgray"
-            android:textSize="10sp"
+            android:textColor="@color/dark_gray"
+            android:textSize="12sp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="50dp"
             android:layout_toRightOf="@id/ivFavorite"
@@ -115,11 +115,11 @@
 
         <ImageView
             android:id="@+id/ivAdd"
-            android:background="@drawable/add"
+            android:background="@drawable/ic_person"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 
-</RelativeLayout><!-- From: file:/Users/paulina/Desktop/twitter-client/app/src/main/res/layout/item_tweet.xml -->
+</RelativeLayout><!-- From: file:/Users/paulina/Desktop/chirper/app/src/main/res/layout/item_tweet.xml -->

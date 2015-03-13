@@ -46,7 +46,7 @@ Also implemented ViewHolder pattern for fast lookups.
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-Icons credited to [NounProject](http://thenounproject.com).
+Icons credited to [Noun Project](http://thenounproject.com) and [Google Material Icons](http://google.github.io/material-design-icons/).
 
 ## Libraries
 

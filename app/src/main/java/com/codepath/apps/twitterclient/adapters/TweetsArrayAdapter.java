@@ -66,6 +66,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.ivProfilePic.setImageResource(android.R.color.transparent); // clear out old image for recycled view
         Picasso.with(getContext())
                 .load(tweet.getUser().getProfileImageUrl())
+                .placeholder(R.drawable.ic_placeholder)
                 .into(viewHolder.ivProfilePic);
         viewHolder.tvName.setText(tweet.getUser().getName());
         viewHolder.tvUsername.setText("@" + tweet.getUser().getScreenName());

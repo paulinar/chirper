@@ -1270,12 +1270,12 @@ containing a value of this type.
         public static final int bright_foreground_material_light=0x7f070011;
         public static final int button_material_dark=0x7f070012;
         public static final int button_material_light=0x7f070013;
-        public static final int darkgray=0x7f070014;
+        public static final int dark_gray=0x7f070014;
         public static final int dim_foreground_disabled_material_dark=0x7f070015;
         public static final int dim_foreground_disabled_material_light=0x7f070016;
         public static final int dim_foreground_material_dark=0x7f070017;
         public static final int dim_foreground_material_light=0x7f070018;
-        public static final int gullgray=0x7f070019;
+        public static final int gull_gray=0x7f070019;
         public static final int highlighted_text_material_dark=0x7f07001a;
         public static final int highlighted_text_material_light=0x7f07001b;
         public static final int hint_foreground_material_dark=0x7f07001c;
@@ -1405,21 +1405,20 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int add=0x7f020033;
-        public static final int background_tab=0x7f020034;
-        public static final int button_shape=0x7f020035;
-        public static final int ic_close=0x7f020036;
-        public static final int ic_compose=0x7f020037;
-        public static final int ic_launcher=0x7f020038;
-        public static final int ic_notifications=0x7f020039;
-        public static final int ic_person_add=0x7f02003a;
+        public static final int background_tab=0x7f020033;
+        public static final int button_shape=0x7f020034;
+        public static final int ic_close=0x7f020035;
+        public static final int ic_compose=0x7f020036;
+        public static final int ic_launcher=0x7f020037;
+        public static final int ic_notifications=0x7f020038;
+        public static final int ic_person=0x7f020039;
+        public static final int ic_placeholder=0x7f02003a;
         public static final int ic_profile=0x7f02003b;
-        public static final int ic_search=0x7f02003c;
-        public static final int ic_twitter=0x7f02003d;
-        public static final int ic_twitter_bird=0x7f02003e;
-        public static final int reply=0x7f02003f;
-        public static final int retweet=0x7f020040;
-        public static final int star=0x7f020041;
+        public static final int ic_reply=0x7f02003c;
+        public static final int ic_retweet=0x7f02003d;
+        public static final int ic_search=0x7f02003e;
+        public static final int ic_star=0x7f02003f;
+        public static final int ic_twitter_bird=0x7f020040;
     }
     public static final class id {
         public static final int action_bar=0x7f090033;
@@ -1564,8 +1563,9 @@ containing a value of this type.
         public static final int menu_timeline=0x7f0d0003;
     }
     public static final class mipmap {
-        public static final int ic_twitter=0x7f030000;
-        public static final int ic_twitter_bird=0x7f030001;
+        public static final int ic_launcher_twitter=0x7f030000;
+        public static final int ic_twitter=0x7f030001;
+        public static final int ic_twitter_bird=0x7f030002;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0b0000;

@@ -32,10 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/username"
-        android:textColor="@color/gullgray"
+        android:textColor="@color/gull_gray"
         android:textSize="15sp"
         android:layout_below="@id/tvName"
         android:layout_toRightOf="@id/ivProfilePic"
         android:layout_centerHorizontal="true" />
 
-</RelativeLayout><!-- From: file:/Users/paulina/Desktop/twitter-client/app/src/main/res/layout/current_user_info.xml -->
+</RelativeLayout><!-- From: file:/Users/paulina/Desktop/chirper/app/src/main/res/layout/current_user_info.xml -->

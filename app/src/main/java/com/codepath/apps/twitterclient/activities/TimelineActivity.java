@@ -54,6 +54,7 @@ public class TimelineActivity extends ActionBarActivity {
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.mipmap.ic_twitter_bird);
         actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setElevation(0);
 
         // 1. Get the viewpager
         ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);

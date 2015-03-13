@@ -59,6 +59,7 @@ public class CurrentUserInfoArrayAdapter extends ArrayAdapter<User> {
         viewHolder.ivProfilePic.setImageResource(android.R.color.transparent);
         Picasso.with(getContext())
                 .load(user.getProfileImageUrl())
+                .placeholder(R.drawable.ic_placeholder)
                 .into(viewHolder.ivProfilePic);
         viewHolder.tvName.setText(user.getName());
         viewHolder.tvUsername.setText("@" + user.getScreenName());

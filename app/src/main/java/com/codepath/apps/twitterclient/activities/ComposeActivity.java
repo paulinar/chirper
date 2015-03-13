@@ -74,9 +74,10 @@ public class ComposeActivity extends ActionBarActivity {
             public void onTextChanged(CharSequence charSeq, int start, int before, int count) {
                 if (charSeq.length() > 140) {
                     tvCharCount.setTextColor(Color.RED);
+                    btnTweet.setBackgroundColor(Color.GRAY);
                     btnTweet.setEnabled(false);
                 } else {
-                    tvCharCount.setTextColor(getResources().getColor(R.color.darkgray));
+                    tvCharCount.setTextColor(getResources().getColor(R.color.dark_gray));
                     btnTweet.setEnabled(true);
                 }
                 tvCharCount.setText(String.valueOf(charSeq.length()));

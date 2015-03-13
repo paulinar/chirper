@@ -2,88 +2,81 @@
 <items version="2" >
 
     <item
-        jar="/Users/paulina/Desktop/twitter-client/app/libs/codepath-utils.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-utils-7db31695a581c3293818caa8236c8a0ec976ec61.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
+        jar="/Users/paulina/Desktop/chirper/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-4cf3dc82b98469dc7d6e08df4c72eaf96371d097.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-1c1accd9d11ca5c6ed3a930994f13902ea16caf3.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/libs/codepath-oauth-0.4.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e2bf2d92cfe90d44287c510d955d0c979631e99e">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/codepath-oauth-0.4.1-620557d805dba8d1b30d09e63514122335355461.jar" />
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/classes-1fd1a3aa58bd840c1a00e756f4d30aaf68cd6783.jar" />
     </item>
     <item
         jar="/Users/paulina/.gradle/caches/modules-2/files-2.1/com.loopj.android/android-async-http/1.4.6/a845a88238be0b5be9d238652c1bc0605ef91f52/android-async-http-1.4.6.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.6-0014b2b27c2767e937d1696438a24a0f3b4d22c7.jar" />
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.6-0014b2b27c2767e937d1696438a24a0f3b4d22c7.jar" />
     </item>
     <item
-        jar="/Users/paulina/.gradle/caches/modules-2/files-2.1/com.michaelpardo/activeandroid/3.1.0-SNAPSHOT/4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08/activeandroid-3.1.0-SNAPSHOT.jar"
+        jar="/Users/paulina/Desktop/chirper/app/libs/codepath-utils.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/activeandroid-3.1.0-SNAPSHOT-c61526256aa5aa2e73bca6e9a5bb81f62405b68f.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-5f75b63f4b74f8ed4c735a172a61de3e57549d2e.jar" />
+        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4">
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/codepath-utils-bc536f7a1a96a25f753687d580a2f2ef82b1d291.jar" />
     </item>
     <item
         jar="/Users/paulina/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.4.0/f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2/picasso-2.4.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/picasso-2.4.0-10c9690a882945c17b22802522897e732792aa23.jar" />
-    </item>
-    <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.github.johnkil.android-progressfragment/progressfragment/1.4.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="8de4e8b73125d261ce4ab4a369a49c3fb4a7ab1d">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-85a51b67897907f096f93de7a6a0bb184ea90efc.jar" />
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/picasso-2.4.0-10c9690a882945c17b22802522897e732792aa23.jar" />
     </item>
     <item
         jar="/Users/paulina/Desktop/Installed/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-1e9759a5d79f0aa623f6ddb29a8b5d5f28d66b96.jar" />
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-1e9759a5d79f0aa623f6ddb29a8b5d5f28d66b96.jar" />
     </item>
     <item
-        jar="/Users/paulina/Desktop/twitter-client/app/libs/scribe-codepath-0.0.3.jar"
+        jar="/Users/paulina/Desktop/chirper/app/libs/scribe-codepath-0.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="a580d06de954001f787e8d024bfcf931fe30bdda">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/scribe-codepath-0.0.3-757e0389276a340fdc96889f862e99294efa7716.jar" />
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/scribe-codepath-0.0.3-062a40ec62d9d655de3a59aa8e8e3de460b34f0a.jar" />
     </item>
     <item
-        jar="/Users/paulina/Desktop/twitter-client/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/classes.jar"
+        jar="/Users/paulina/.gradle/caches/modules-2/files-2.1/com.michaelpardo/activeandroid/3.1.0-SNAPSHOT/4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08/activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/activeandroid-3.1.0-SNAPSHOT-c61526256aa5aa2e73bca6e9a5bb81f62405b68f.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/chirper/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-cfc1ff979730cec6ce73d6d951fc6e66d3826251.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/chirper/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/classes-e268793c00e0e0e3e9512e34c7dfa9ef90e6eadd.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/chirper/app/libs/codepath-oauth-0.4.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e2bf2d92cfe90d44287c510d955d0c979631e99e">
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/codepath-oauth-0.4.1-86425ac71a483e4ab3d609d66acdf41d3a382a70.jar" />
+    </item>
+    <item
+        jar="/Users/paulina/Desktop/chirper/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="7912610ed96381c25c36d986eba422731b9641b6">
-        <dex dex="/Users/paulina/Desktop/twitter-client/app/build/intermediates/pre-dexed/debug/classes-15d1cebcf8a285ae7d91096a48c98c80caa5bb83.jar" />
+        <dex dex="/Users/paulina/Desktop/chirper/app/build/intermediates/pre-dexed/debug/classes-4dec5cc80713cab64ff250743838439912a9b07f.jar" />
     </item>
 
 </items>
