@@ -19,9 +19,9 @@
 
     <ImageView
         android:id="@+id/ivProfileImage"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginRight="10dp"
+        android:layout_width="@dimen/profile_image_width"
+        android:layout_height="@dimen/profile_image_height"
+        android:layout_marginRight="@dimen/profile_image_margin_right"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         />
@@ -31,9 +31,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/ivProfileImage"
-            android:text="name"
+            tools:text="@string/name"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="@dimen/profile_name_text_size"
             android:textColor="@color/black"/>
 
         <TextView
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/tvName"
             android:layout_below="@id/tvName"
-            android:text="tagline"
-            android:textSize="12sp"/>
+            tools:text="@string/tagline"
+            android:textSize="@dimen/profile_tagline_text_size"/>
 
     </RelativeLayout>
 
@@ -53,20 +53,20 @@
         android:layout_below="@id/rlUserHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="@dimen/profile_counts_margin_bottom">
 
         <TextView
             android:id="@+id/tvFollowers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5 Followers"/>
+            tools:text="@string/followers"/>
 
         <TextView
             android:id="@+id/tvFollowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="5 Following"/>
+            android:layout_marginLeft="@dimen/profile_following_margin_left"
+            tools:text="@string/following"/>
 
     </LinearLayout>
 

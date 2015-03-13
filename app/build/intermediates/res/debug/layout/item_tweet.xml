@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp">
 
     <ImageView
         android:id="@+id/ivProfilePic"
         android:background="@drawable/ic_launcher"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="5dp"
+        android:layout_width="@dimen/tweet_profile_image_width"
+        android:layout_height="@dimen/tweet_profile_image_height"
+        android:layout_marginRight="@dimen/tweet_profile_image_margin_right"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -18,10 +20,10 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name"
+        tools:text="@string/name"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginRight="4dp"
+        android:layout_marginRight="@dimen/tweet_name_margin_right"
         android:layout_toRightOf="@id/ivProfilePic"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -30,7 +32,7 @@
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username"
+        tools:text="@string/username"
         android:textColor="@color/dark_gray"
         android:layout_toRightOf="@id/tvName"
         android:layout_alignParentTop="true"
@@ -40,8 +42,8 @@
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text"
-        android:textSize="14sp"
+        tools:text="@string/text"
+        android:textSize="@dimen/tweet_body_size"
         android:textColor="@color/black"
         android:ellipsize="end"
         android:maxLines="4"
@@ -54,7 +56,7 @@
         android:id="@+id/tvCreatedAt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/created_at"
+        tools:text="@string/created_at"
         android:textColor="@color/dark_gray"
         android:layout_below="@id/tvUsername"
         android:layout_alignParentTop="true"
@@ -66,14 +68,14 @@
         android:layout_height="match_parent"
         android:layout_below="@id/tvBody"
         android:layout_toRightOf="@id/ivProfilePic"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/tweet_actions_margin_top">
 
         <ImageView
             android:id="@+id/ivReply"
             android:background="@drawable/ic_reply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="50dp" />
+            android:layout_marginRight="@dimen/tweet_actions_margin_right" />
 
         <ImageView
             android:id="@+id/ivRetweet"
@@ -87,9 +89,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:textSize="12sp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="50dp"
+            android:textSize="@dimen/tweet_actions_text_size"
+            android:layout_marginLeft="@dimen/tweet_actions_margin_left"
+            android:layout_marginRight="@dimen/tweet_actions_margin_right"
             android:layout_toRightOf="@id/ivRetweet"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -106,9 +108,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_gray"
-            android:textSize="12sp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="50dp"
+            android:textSize="@dimen/tweet_actions_text_size"
+            android:layout_marginLeft="@dimen/tweet_actions_margin_left"
+            android:layout_marginRight="@dimen/tweet_actions_margin_right"
             android:layout_toRightOf="@id/ivFavorite"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />

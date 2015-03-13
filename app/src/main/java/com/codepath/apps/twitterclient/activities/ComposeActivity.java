@@ -43,6 +43,8 @@ public class ComposeActivity extends ActionBarActivity {
     private CurrentUserInfoArrayAdapter aUserInfo;
     private ListView lvUserInfo;
 
+    private final String COMPOSE_ACTIVITY_TAG = "COMPOSE_ACTIVITY";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +81,7 @@ public class ComposeActivity extends ActionBarActivity {
                 } else {
                     tvCharCount.setTextColor(getResources().getColor(R.color.dark_gray));
                     btnTweet.setEnabled(true);
+                    btnTweet.setBackgroundColor(getResources().getColor(R.color.skyblue));
                 }
                 tvCharCount.setText(String.valueOf(charSeq.length()));
             }
@@ -94,22 +97,20 @@ public class ComposeActivity extends ActionBarActivity {
             TwitterApplication.getRestClient().postTweet(new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                    Log.d("DEBUG", response.toString());
+                    Log.d(COMPOSE_ACTIVITY_TAG, response.toString());
                     Intent i = new Intent();
                     i.putExtra("newTweet", Tweet.fromJSON(response));
                     setResult(RESULT_OK, i);
                     finish();
                 }
-
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                    Log.d("DEBUG", errorResponse.toString());
-                    Log.d("DEBUG", throwable.toString());
+                    Log.d(COMPOSE_ACTIVITY_TAG, errorResponse.toString());
+                    Log.d(COMPOSE_ACTIVITY_TAG, throwable.toString());
                 }
             }, tweetBody);
         }
     }
-
 
     public void cancelTweet(View v) {
         finish();
@@ -124,15 +125,15 @@ public class ComposeActivity extends ActionBarActivity {
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                    Log.d("DEBUG", response.toString());
+                    Log.d(COMPOSE_ACTIVITY_TAG, response.toString());
                     User userInfo = User.fromJSON(response);
                     aUserInfo.add(userInfo);
                 }
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                    Log.d("DEBUG", errorResponse.toString());
-                    Log.d("DEBUG", throwable.toString());
+                    Log.d(COMPOSE_ACTIVITY_TAG, errorResponse.toString());
+                    Log.d(COMPOSE_ACTIVITY_TAG, throwable.toString());
                 }
             });
         }

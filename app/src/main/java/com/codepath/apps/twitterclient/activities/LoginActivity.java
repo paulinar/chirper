@@ -21,6 +21,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.mipmap.ic_twitter_bird);
+        actionBar.setElevation(0);
 	}
 
 	// Inflate the menu; this adds items to the action bar if it is present.
@@ -31,7 +32,6 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 	}
 
 	// OAuth authenticated successfully, launch primary authenticated activity
-	// i.e Display application "homepage"
 	@Override
 	public void onLoginSuccess() {
 		Intent i = new Intent(this, TimelineActivity.class);
@@ -39,7 +39,6 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 	}
 
 	// OAuth authentication flow failed, handle the error
-	// i.e Display an error dialog or toast
 	@Override
 	public void onLoginFailure(Exception e) {
 		e.printStackTrace();

@@ -1344,14 +1344,49 @@ containing a value of this type.
         public static final int abc_text_size_subtitle_material_toolbar=0x7f080022;
         public static final int abc_text_size_title_material=0x7f080023;
         public static final int abc_text_size_title_material_toolbar=0x7f080024;
-        public static final int activity_horizontal_margin=0x7f080025;
-        public static final int activity_vertical_margin=0x7f080026;
-        public static final int dialog_fixed_height_major=0x7f080027;
-        public static final int dialog_fixed_height_minor=0x7f080028;
-        public static final int dialog_fixed_width_major=0x7f080029;
-        public static final int dialog_fixed_width_minor=0x7f08002a;
-        public static final int disabled_alpha_material_dark=0x7f08002b;
-        public static final int disabled_alpha_material_light=0x7f08002c;
+        public static final int activity_compose_padding_bottom=0x7f080025;
+        public static final int activity_compose_padding_left=0x7f080026;
+        public static final int activity_compose_padding_right=0x7f080027;
+        public static final int activity_compose_padding_top=0x7f080028;
+        public static final int activity_horizontal_margin=0x7f080029;
+        public static final int activity_vertical_margin=0x7f08002a;
+        public static final int char_count_margin_right=0x7f08002b;
+        public static final int char_count_margin_top=0x7f08002c;
+        public static final int char_count_text_size=0x7f08002d;
+        public static final int compose_button_height=0x7f08002e;
+        public static final int compose_button_text_size=0x7f08002f;
+        public static final int compose_button_width=0x7f080030;
+        public static final int dialog_fixed_height_major=0x7f080031;
+        public static final int dialog_fixed_height_minor=0x7f080032;
+        public static final int dialog_fixed_width_major=0x7f080033;
+        public static final int dialog_fixed_width_minor=0x7f080034;
+        public static final int disabled_alpha_material_dark=0x7f080035;
+        public static final int disabled_alpha_material_light=0x7f080036;
+        public static final int edit_text_padding_left=0x7f080037;
+        public static final int edit_text_padding_top=0x7f080038;
+        public static final int edit_text_size=0x7f080039;
+        public static final int login_button_margin=0x7f08003a;
+        public static final int my_profile_image_height=0x7f08003b;
+        public static final int my_profile_image_margin_right=0x7f08003c;
+        public static final int my_profile_image_width=0x7f08003d;
+        public static final int my_profile_name_size=0x7f08003e;
+        public static final int profile_counts_margin_bottom=0x7f08003f;
+        public static final int profile_following_margin_left=0x7f080040;
+        public static final int profile_image_height=0x7f080041;
+        public static final int profile_image_margin_right=0x7f080042;
+        public static final int profile_image_width=0x7f080043;
+        public static final int profile_name_text_size=0x7f080044;
+        public static final int profile_tagline_text_size=0x7f080045;
+        public static final int tab_strip_height=0x7f080046;
+        public static final int tweet_actions_margin_left=0x7f080047;
+        public static final int tweet_actions_margin_right=0x7f080048;
+        public static final int tweet_actions_margin_top=0x7f080049;
+        public static final int tweet_actions_text_size=0x7f08004a;
+        public static final int tweet_body_size=0x7f08004b;
+        public static final int tweet_name_margin_right=0x7f08004c;
+        public static final int tweet_profile_image_height=0x7f08004d;
+        public static final int tweet_profile_image_margin_right=0x7f08004e;
+        public static final int tweet_profile_image_width=0x7f08004f;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_holo_dark=0x7f020000;
@@ -1419,6 +1454,7 @@ containing a value of this type.
         public static final int ic_search=0x7f02003e;
         public static final int ic_star=0x7f02003f;
         public static final int ic_twitter_bird=0x7f020040;
+        public static final int login_button=0x7f020041;
     }
     public static final class id {
         public static final int action_bar=0x7f090033;
@@ -1564,8 +1600,7 @@ containing a value of this type.
     }
     public static final class mipmap {
         public static final int ic_launcher_twitter=0x7f030000;
-        public static final int ic_twitter=0x7f030001;
-        public static final int ic_twitter_bird=0x7f030002;
+        public static final int ic_twitter_bird=0x7f030001;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0b0000;
@@ -1591,18 +1626,22 @@ containing a value of this type.
         public static final int action_settings=0x7f0b0014;
         public static final int app_name=0x7f0b0015;
         public static final int char_limit=0x7f0b0016;
-        public static final int compose_hint=0x7f0b0017;
-        public static final int created_at=0x7f0b0018;
-        public static final int hello_world=0x7f0b0019;
-        public static final int login_label=0x7f0b001a;
-        public static final int mari_inu=0x7f0b001b;
-        public static final int name=0x7f0b001c;
-        public static final int text=0x7f0b001d;
-        public static final int title_activity_compose=0x7f0b001e;
-        public static final int title_activity_profile=0x7f0b001f;
-        public static final int title_activity_timeline=0x7f0b0020;
-        public static final int tweet=0x7f0b0021;
-        public static final int username=0x7f0b0022;
+        public static final int compose_activity_namespace=0x7f0b0017;
+        public static final int compose_hint=0x7f0b0018;
+        public static final int created_at=0x7f0b0019;
+        public static final int followers=0x7f0b001a;
+        public static final int following=0x7f0b001b;
+        public static final int hello_world=0x7f0b001c;
+        public static final int login_label=0x7f0b001d;
+        public static final int mari_inu=0x7f0b001e;
+        public static final int name=0x7f0b001f;
+        public static final int tagline=0x7f0b0020;
+        public static final int text=0x7f0b0021;
+        public static final int title_activity_compose=0x7f0b0022;
+        public static final int title_activity_profile=0x7f0b0023;
+        public static final int title_activity_timeline=0x7f0b0024;
+        public static final int tweet=0x7f0b0025;
+        public static final int username=0x7f0b0026;
     }
     public static final class style {
         /** 

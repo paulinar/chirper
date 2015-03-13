@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
     android:background="@color/white">
@@ -8,9 +10,9 @@
     <ImageView
         android:id="@+id/ivProfilePic"
         android:background="@drawable/ic_launcher"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="@dimen/my_profile_image_width"
+        android:layout_height="@dimen/my_profile_image_height"
+        android:layout_marginRight="@dimen/my_profile_image_margin_right"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/ivCancel"/>
 
@@ -18,9 +20,9 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name"
+        tools:text="@string/name"
         android:textStyle="bold"
-        android:textSize="15sp"
+        android:textSize="@dimen/my_profile_name_size"
         android:textColor="@color/black"
         android:layout_below="@id/ivCancel"
         android:layout_alignTop="@id/ivProfilePic"
@@ -31,9 +33,9 @@
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username"
+        tools:text="@string/username"
         android:textColor="@color/gull_gray"
-        android:textSize="15sp"
+        android:textSize="@dimen/my_profile_name_size"
         android:layout_below="@id/tvName"
         android:layout_toRightOf="@id/ivProfilePic"
         android:layout_centerHorizontal="true" />

@@ -33,8 +33,10 @@ public class MentionsTimelineFragment extends TweetsListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // get the client
-        client = TwitterApplication.getRestClient(); // singleton class; using same client across all activities
+
+        // get the client (used across all activities; singleton)
+        client = TwitterApplication.getRestClient();
+
         populateTimeline(0, false);
     }
 

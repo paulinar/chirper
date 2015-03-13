@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="8dp"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="10dp"
+    android:paddingBottom="@dimen/activity_compose_padding_bottom"
+    android:paddingLeft="@dimen/activity_compose_padding_left"
+    android:paddingRight="@dimen/activity_compose_padding_right"
+    android:paddingTop="@dimen/activity_compose_padding_top"
     android:background="@color/white"
-    tools:context="com.codepath.apps.twitterclient.activities.ComposeActivity" >
+    tools:context="@string/compose_activity_namespace" >
 
     <ImageView
         android:id="@+id/ivCancel"
@@ -20,12 +20,12 @@
 
     <Button
         android:id="@+id/btnTweet"
-        android:layout_width="65dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/compose_button_width"
+        android:layout_height="@dimen/compose_button_height"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:text="@string/tweet"
-        android:textSize="15sp"
+        android:textSize="@dimen/compose_button_text_size"
         android:textColor="@color/white"
         android:background="@drawable/button_shape"
         android:onClick="submitTweet"/>
@@ -34,9 +34,9 @@
         android:id="@+id/tvCharCount"
         android:text="@string/char_limit"
         android:textColor="@color/dark_gray"
-        android:textSize="13sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="12dp"
+        android:textSize="@dimen/char_count_text_size"
+        android:layout_marginTop="@dimen/char_count_margin_top"
+        android:layout_marginRight="@dimen/char_count_margin_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/btnTweet"
@@ -56,12 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/lvUserInfo"
-        android:paddingLeft="8dp"
-        android:paddingTop="8dp"
+        android:paddingLeft="@dimen/edit_text_padding_left"
+        android:paddingTop="@dimen/edit_text_padding_top"
         android:ems="10"
         android:inputType="textMultiLine"
         android:hint="@string/compose_hint"
-        android:textSize="17sp"
+        android:textSize="@dimen/edit_text_size"
         android:textColorHint="@color/dark_gray"
         android:background="@null" >
         <requestFocus />

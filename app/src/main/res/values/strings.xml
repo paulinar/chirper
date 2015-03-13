@@ -21,5 +21,9 @@
     <string name="compose_hint">What\'s happening?</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="mari_inu">\@mari_inu</string>
+    <string name="tagline">tagline</string>
+    <string name="followers">5 Followers</string>
+    <string name="following">5 Following</string>
+    <string name="compose_activity_namespace">com.codepath.apps.twitterclient.activities.ComposeActivity</string>
 
 </resources>
